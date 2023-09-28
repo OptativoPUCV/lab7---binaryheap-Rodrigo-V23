@@ -116,3 +116,18 @@ test.c:6:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 d014122
+Thu 28 Sep 2023 09:12:00 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:16: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   39 |   monticulo -> capacity = 20;
+      |                ^~~~~~~~
+      |                capac
+heap.c:41:69: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   41 |   monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capacity);
+      |                                                                     ^~~~~~~~
+      |                                                                     capac
+Compilation failed
+7c0face
