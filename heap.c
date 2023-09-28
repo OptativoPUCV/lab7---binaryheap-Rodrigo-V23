@@ -36,7 +36,7 @@ Heap* createHeap()
   {
     return NULL;
   }
-  monticulo -> capacity = 20;
+  monticulo -> capacity = 3;
   monticulo -> size = 0;
   monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capacity);
 
