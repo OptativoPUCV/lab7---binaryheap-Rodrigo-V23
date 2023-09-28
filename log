@@ -157,3 +157,33 @@ heap.c:41:26: error: assignment to ‘heapElem *’ {aka ‘struct nodo *’} fr
 cc1: all warnings being treated as errors
 Compilation failed
 69b13f2
+Thu 28 Sep 2023 09:13:17 PM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:41:26: error: assignment to ‘heapElem *’ {aka ‘struct nodo *’} from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   41 |   monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capacity);
+      |                          ^
+test.c: In function ‘initialize_heap’:
+test.c:68:11: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capac’; did you mean ‘capacity’?
+   68 |     heap->capac = 7;
+      |           ^~~~~
+      |           capacity
+test.c: In function ‘test_create’:
+test.c:95:11: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capac’; did you mean ‘capacity’?
+   95 |     if(h->capac!=3){
+      |           ^~~~~
+      |           capacity
+test.c:107:25: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capac’; did you mean ‘capacity’?
+  107 |     if(h->size!=0 || h->capac!=3){
+      |                         ^~~~~
+      |                         capacity
+test.c: In function ‘test_push’:
+test.c:200:11: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capac’; did you mean ‘capacity’?
+  200 |     if(h->capac != 15){
+      |           ^~~~~
+      |           capacity
+cc1: all warnings being treated as errors
+Compilation failed
+b9f1094
