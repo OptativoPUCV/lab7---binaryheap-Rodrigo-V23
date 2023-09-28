@@ -146,3 +146,14 @@ heap.c:41:69: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘c
       |                                                                     capac
 Compilation failed
 b0d0e21
+Thu 28 Sep 2023 09:12:46 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:41:26: error: assignment to ‘heapElem *’ {aka ‘struct nodo *’} from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   41 |   monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capac);
+      |                          ^
+cc1: all warnings being treated as errors
+Compilation failed
+69b13f2
