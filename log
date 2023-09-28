@@ -44,3 +44,39 @@ test.c:6:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 4e2d8f5
+Thu 28 Sep 2023 09:10:14 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:34:48: error: expected ‘)’ before ‘;’ token
+   34 |   Heap * monticulo = (Heap*)malloc(sizeof(Heap);
+      |                                   ~            ^
+      |                                                )
+heap.c:49:1: error: expected ‘,’ or ‘;’ before ‘}’ token
+   49 | }
+      | ^
+test.c:276:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  276 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:292:1: error: expected declaration or statement at end of input
+  292 | }
+      | ^
+test.c:12:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+   12 | char msg[300];
+      |      ^~~
+In file included from test.c:4:
+heap.c:34:10: error: unused variable ‘monticulo’ [-Werror=unused-variable]
+   34 |   Heap * monticulo = (Heap*)malloc(sizeof(Heap);
+      |          ^~~~~~~~~
+test.c:293: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:276:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  276 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:6:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bff5357
