@@ -13,7 +13,7 @@ typedef struct nodo{
 typedef struct Heap{
   heapElem* heapArray;
   int size;
-  int capacity;
+  int capac;
 } Heap;
 
 
@@ -36,9 +36,9 @@ Heap* createHeap()
   {
     return NULL;
   }
-  monticulo -> capacity = 3;
+  monticulo -> capac = 3;
   monticulo -> size = 0;
-  monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capacity);
+  monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capac);
 
   if(monticulo -> heapArray == NULL)
   {
