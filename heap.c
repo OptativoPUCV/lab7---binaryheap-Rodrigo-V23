@@ -31,19 +31,9 @@ void heap_pop(Heap* pq)
 }
 Heap* createHeap()
 {
-  Heap * monticulo = (Heap*)malloc(sizeof(Heap));
-  if(monticulo == NULL)
-  {
-    return NULL;
-  }
-  monticulo -> capac = 3;
-  monticulo -> size = 0;
-  monticulo -> heapArray = (int*) malloc(sizeof(int) * monticulo -> capac);
-
-  if(monticulo -> heapArray == NULL)
-  {
-    free(monticulo);
-    return NULL;
-  }
-  return monticulo;
+  Heap* newHeap = (Heap*)malloc(sizeof(Heap));
+    newHeap->heapArray = (heapElem*)malloc(sizeof(heapElem) * 3);
+    newHeap->size = 0;
+    newHeap->capac = 3;
+    return newHeap;
 }
