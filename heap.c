@@ -19,7 +19,11 @@ typedef struct Heap{
 
 void* heap_top(Heap* pq)
 {
-  return NULL;
+  if(pq -> size == 0)
+  {
+    return NULL;
+  }
+  return pq -> heapArray[0].data;
 }
 void heap_push(Heap* pq, void* data, int priority)
 {
@@ -32,8 +36,8 @@ void heap_pop(Heap* pq)
 Heap* createHeap()
 {
   Heap* newHeap = (Heap*)malloc(sizeof(Heap));
-    newHeap->heapArray = (heapElem*)malloc(sizeof(heapElem) * 3);
-    newHeap->size = 0;
-    newHeap->capac = 3;
-    return newHeap;
+  newHeap->heapArray = (heapElem*)malloc(sizeof(heapElem) * 3);
+  newHeap->size = 0;
+  newHeap->capac = 3;
+  return newHeap;
 }
