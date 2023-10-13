@@ -16,7 +16,6 @@ typedef struct Heap{
   int capac;
 } Heap;
 
-
 void* heap_top(Heap* pq)
 {
   if(pq -> size == 0)
@@ -25,30 +24,35 @@ void* heap_top(Heap* pq)
   }
   return pq -> heapArray[0].data;
 }
-void heap_push(Heap* pq, void* data, int p) {
-    if (pq->size == pq->capac) {
-        pq->capac = pq->capac * 2 + 1;
-        pq->heapArray = (heapElem*)realloc(pq->heapArray, sizeof(heapElem) * pq->capac);
+void heap_push(Heap* pq, void* data, int p)
+{
+  if (pq->size == pq->capac)
+  {
+    pq->capac = pq->capac * 2 + 1;
+    pq->heapArray = (heapElem*)realloc(pq->heapArray, sizeof(heapElem) * pq->capac);
+  }
+  int index = pq->size;
+  pq->size++;
+
+  while (index > 0)
+  {
+    int parentIndex = (index - 1) / 2;
+    if (pq->heapArray[parentIndex].priority >= p)
+    {
+      break;
     }
-
-    int index = pq->size;
-    pq->size++;
-
-    while (index > 0) {
-        int parentIndex = (index - 1) / 2;
-        if (pq->heapArray[parentIndex].priority >= p) {
-            break;
-        }
-        pq->heapArray[index] = pq->heapArray[parentIndex];
-        index = parentIndex;
-    }
-
-    pq->heapArray[index].data = data;
-    pq->heapArray[index].priority = p;
+    pq->heapArray[index] = pq->heapArray[parentIndex];
+    index = parentIndex;
+  }
+  pq->heapArray[index].data = data;
+  pq->heapArray[index].priority = p;
 }
 void heap_pop(Heap* pq)
 {
-
+  if(pq -> size == 0)
+  {
+    return;
+  }
 }
 Heap* createHeap()
 {
