@@ -53,6 +53,13 @@ void heap_pop(Heap* pq)
   {
     return;
   }
+  pq -> size --;
+  pq -> heapArray[0] = pq -> heapArray[pq -> size];
+  int index = 0;
+  while(1)
+  {
+    
+  }
 }
 Heap* createHeap()
 {
