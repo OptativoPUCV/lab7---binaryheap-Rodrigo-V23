@@ -73,7 +73,7 @@ void heap_pop(Heap* pq)
     heapElem temp = pq -> heapArray[index];
     pq -> heapArray[index] = pq -> heapArray[largest];
     pq -> heapArray[largest] = temp;
-    index = largest
+    index = largest;
   }
 }
 Heap* createHeap()
