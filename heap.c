@@ -58,6 +58,19 @@ void heap_pop(Heap* pq)
   int index = 0;
   while(1)
   {
+    int leftchild = 2 * index + 1;
+    int rightchild = 2 * index + 2;
+    int largest = index;
+
+    if(leftchild < pq -> size && pq -> heapArray[leftchild].priority > pq -> heapArray[largest].priority)
+    {
+      largest = rightchild;
+    }
+    if(largest == index)
+    {
+      break
+    }
+    heapElem temp = pq -> heapArray[index];
     
   }
 }

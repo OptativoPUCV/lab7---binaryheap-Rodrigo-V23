@@ -267,3 +267,20 @@ heap.c:58:7: error: unused variable ‘index’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a1fe95b
+Sat 14 Oct 2023 06:46:38 PM UTC: 
+ heap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:71:12: error: expected ‘;’ before ‘}’ token
+   71 |       break
+      |            ^
+      |            ;
+   72 |     }
+      |     ~       
+heap.c:73:14: error: unused variable ‘temp’ [-Werror=unused-variable]
+   73 |     heapElem temp = pq -> heapArray[index];
+      |              ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+49ddcad
