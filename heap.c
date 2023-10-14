@@ -68,10 +68,12 @@ void heap_pop(Heap* pq)
     }
     if(largest == index)
     {
-      break
+      break;
     }
     heapElem temp = pq -> heapArray[index];
-    
+    pq -> heapArray[index] = pq -> heapArray[largest];
+    pq -> heapArray[largest] = temp;
+    index = largest
   }
 }
 Heap* createHeap()

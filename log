@@ -284,3 +284,16 @@ heap.c:73:14: error: unused variable ‘temp’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 49ddcad
+Sat 14 Oct 2023 06:47:36 PM UTC: 
+ heap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:76:20: error: expected ‘;’ before ‘}’ token
+   76 |     index = largest
+      |                    ^
+      |                    ;
+   77 |   }
+      |   ~                 
+Compilation failed
+13cd099
