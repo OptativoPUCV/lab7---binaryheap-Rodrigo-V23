@@ -72,7 +72,7 @@ void heap_pop(Heap* pq)
     pq -> heapArray[index] = pq -> heapArray[child];
     index = child;
   }
-  pq -> heapArray[index] = last
+  pq -> heapArray[index] = last;
 }
 Heap* createHeap()
 {
