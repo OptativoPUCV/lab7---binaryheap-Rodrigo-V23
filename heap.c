@@ -53,28 +53,26 @@ void heap_pop(Heap* pq)
   {
     return;
   }
-  pq -> size --;
-  pq -> heapArray[0] = pq -> heapArray[pq -> size];
+  pq -> size--;
   int index = 0;
-  while(1)
-  {
-    int leftchild = 2 * index + 1;
-    int rightchild = 2 * index + 2;
-    int largest = index;
+  heapElem last = pq -> heapArray[pq -> size];
 
-    if(leftchild < pq -> size && pq -> heapArray[leftchild].priority > pq -> heapArray[largest].priority)
+  int child;
+  while(2 * index + 1 < pq -> size)
+  {
+    child = 2 * index  + 1;
+    if(child + 1 < pq -> size && pq -> heapArray[child + 1].priority > pq -> heapArray[child].priority)
     {
-      largest = rightchild;
+      child++;
     }
-    if(largest == index)
+    if(last.priority >= pq -> heapArray[child].priority)
     {
       break;
     }
-    heapElem temp = pq -> heapArray[index];
-    pq -> heapArray[index] = pq -> heapArray[largest];
-    pq -> heapArray[largest] = temp;
-    index = largest;
+    pq -> heapArray[index] = pq -> heapArray[child];
+    index = child;
   }
+  pq -> heapArray[index] = last
 }
 Heap* createHeap()
 {
